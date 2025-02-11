@@ -2,6 +2,8 @@ call plug#begin()
 
 Plug 'Julian/lean.nvim'
 Plug 'neovim/nvim-lspconfig'
+  Plug 'williamboman/mason.nvim' " For managing LSPs
+  Plug 'williamboman/mason-lspconfig.nvim' " Mason interface
 Plug 'nvim-lua/plenary.nvim'
 
 " Optional Dependencies:
@@ -20,3 +22,4 @@ call plug#end()
 hi Normal guibg=NONE ctermbg=NONE
 hi Pmenu guifg=#dadada guibg=NONE
 set number
+let mapleader = " "
