@@ -6,6 +6,8 @@ Plug 'neovim/nvim-lspconfig'
   Plug 'williamboman/mason-lspconfig.nvim' " Mason interface
 Plug 'nvim-lua/plenary.nvim'
 
+Plug 'jose-elias-alvarez/null-ls.nvim'
+
 " Optional Dependencies:
 
 Plug 'hrsh7th/nvim-cmp'        " For LSP completion
