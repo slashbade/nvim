@@ -12,16 +12,17 @@ cmp.setup{
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
       ['<CR>'] = cmp.mapping.confirm({ select = true }),
+      ['<Tab>'] = cmp.mapping.select_next_item(),
+      ['<S-Tab>'] = cmp.mapping.select_prev_item(),
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
       { name = 'path' },
-      { name = '' },
       { name = 'buffer' },
       { name = 'copilot' },
     })
 }
--- `/` cmdline setup.
+-- `/` cmdline setup
 cmp.setup.cmdline('/', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
@@ -43,3 +44,11 @@ cmp.setup.cmdline(':', {
   }
 })
 })
+
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('i', '<C-Tab>', 'copilot#Accept("\\<CR>")', {
+  expr = true,
+  replace_keycodes = false
+})
+vim.g.copilot_no_tab_map = true
+vim.keymap.set('i', '<C-Right>', '<Plug>(copilot-accept-word)')
