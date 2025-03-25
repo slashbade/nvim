@@ -17,7 +17,9 @@ Plug('hrsh7th/cmp-cmdline')
 Plug('andrewradev/switch.vim')  -- For Lean switch support
 Plug('tomtom/tcomment_vim')     -- For commenting motions
 Plug('nvim-telescope/telescope.nvim') -- For Loogle search
-Plug('preservim/nerdtree')      -- For file tree
+Plug('nvim-tree/nvim-web-devicons') -- optional
+Plug('nvim-tree/nvim-tree.lua')
+-- Plug('preservim/nerdtree')      -- For file tree
 
 vim.call('plug#end')
 
@@ -33,4 +35,4 @@ vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
 
-vim.keymap.set('n', '<C-t>', ':NERDTreeToggle<CR>')
+-- vim.keymap.set('n', '<C-t>', ':NERDTreeToggle<CR>')
