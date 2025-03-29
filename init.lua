@@ -1,4 +1,4 @@
-vim.keymap.set('i', '<C-L>', '<Plug>(copilot-accept-word)')local vim = vim
+local vim = vim
 local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 
@@ -19,9 +19,13 @@ Plug('tomtom/tcomment_vim')     -- For commenting motions
 Plug('nvim-telescope/telescope.nvim') -- For Loogle search
 Plug('nvim-tree/nvim-web-devicons') -- optional
 Plug('nvim-tree/nvim-tree.lua')
--- Plug('preservim/nerdtree')      -- For file tree
+Plug('windwp/nvim-autopairs')
+Plug('nvim-treesitter/nvim-treesitter')
+
 
 vim.call('plug#end')
+
+vim.keymap.set('i', '<C-L>', '<Plug>(copilot-accept-word)')
 
 vim.cmd[[hi Normal guibg=NONE ctermbg=NONE]]
 vim.cmd[[hi Pmenu guifg=#dadada guibg=NONE]]
@@ -35,4 +39,23 @@ vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
 
--- vim.keymap.set('n', '<C-t>', ':NERDTreeToggle<CR>')
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
+vim.opt.shell = "fish"
+
+vim.g.have_nerd_font = true
+
+vim.opt.updatetime = 250
+
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
+-- Preview substitutions live, as you type!
+vim.opt.inccommand = 'split'
+
+-- Clear highlights on search when pressing <Esc> in normal mode
+--  See `:help hlsearch`
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.opt.scrolloff = 10
+
