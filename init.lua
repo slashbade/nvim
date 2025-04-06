@@ -17,12 +17,12 @@ Plug('hrsh7th/cmp-cmdline')
 Plug('andrewradev/switch.vim')  -- For Lean switch support
 Plug('tomtom/tcomment_vim')     -- For commenting motions
 Plug('nvim-telescope/telescope.nvim') -- For Loogle search
+Plug('nvim-telescope/telescope-fzf-native.nvim', {['do'] = 'make'}) -- For fuzzy search
+Plug('nvim-telescope/telescope-ui-select.nvim')
 Plug('nvim-tree/nvim-web-devicons') -- optional
 Plug('nvim-tree/nvim-tree.lua')
 Plug('windwp/nvim-autopairs')
 Plug('nvim-treesitter/nvim-treesitter')
-
-
 vim.call('plug#end')
 
 vim.keymap.set('i', '<C-L>', '<Plug>(copilot-accept-word)')
@@ -58,4 +58,3 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
-
